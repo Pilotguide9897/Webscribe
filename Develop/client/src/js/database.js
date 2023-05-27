@@ -14,26 +14,46 @@ const initdb = async () =>
 
 // TODO: Add logic to a method that accepts some content and adds it to the database
 export const putDb = async (content) => {
+  const jateDB = await openDB("jate", 1);
+  const tx = jateDB.transaction("jate", "readwrite");
   try {
     console.log("Post to the db.");
-    const jateDB = await openDB("jate", 1);
-    const tx = jateDB.transaction("jate", "readwrite");
     const store = tx.objectStore("jate");
-    // store and pass in the content.
     const request = store.add({ text: content });
     const result = await request;
     console.log("🚀 - data saved to the database", result);
   } catch (error) {
     console.error("putDb not implemented", error);
+  } finally {
+    if (tx.done) {
+      console.log("Transaction completed");
+    } else {
+      console.error("Transaction aborted");
+      tx.abort();
+    }
   }
 };
 
 // TODO: Add logic for a method that gets all the content from the database
 export const getDb = async () => {
+  const jateDB = await openDB("jate", 1);
+  const tx = jateDB.transaction("jate", "readonly");
   try {
-    console.log('Get all the content from the db');
+    console.log("Get all the content from the db");
+    const store = tx.objectStore("jate");
+    const request = store.getAll();
+    const result = await request;
+    console.log("result.value", result);
+    return result;
   } catch (error) {
     console.error("getDb not implemented", error);
+  } finally {
+    if (tx.done) {
+      console.log("Transaction successfully completed");
+    } else {
+      console.error("Transaction aborted");
+      tx.abort();
+    }
   }
 };
 
