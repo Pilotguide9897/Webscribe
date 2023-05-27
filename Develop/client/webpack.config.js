@@ -2,13 +2,13 @@ const HtmlWebpackPlugin = require("html-webpack-plugin");
 const WebpackPwaManifest = require("webpack-pwa-manifest");
 const path = require("path");
 const { InjectManifest } = require("workbox-webpack-plugin");
-const { GenerateSW } = require("workbox-webpack-plugin");
+//const { GenerateSW } = require("workbox-webpack-plugin");
 
 module.exports = () => {
   return {
     mode: "development",
     entry: {
-      main: "./src/js/index.js",
+      main: "./src/js/index.js", 
       install: "./src/js/install.js",
     },
     output: {
@@ -42,9 +42,10 @@ module.exports = () => {
         template: "./index.html",
         title: "Webpack Plugin",
       }),
-       new GenerateSW({
-      swDest: './dist/sw.js'
-       }),
+      new InjectManifest({
+        swSrc: "./src-sw.js", 
+        swDest: "./dist/sw.js",
+      }),
     ],
     module: {
       rules: [
