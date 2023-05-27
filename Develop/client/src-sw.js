@@ -19,7 +19,6 @@ const pageCache = new CacheFirst({
   ],
 });
 
-// TODO: Implement asset caching
 const assetCache = new CacheFirst({
   cacheName: 'asset-cache',
   plugins: [
@@ -42,5 +41,4 @@ registerRoute(({ request }) => request.mode === 'navigate', pageCache);
 registerRoute(({ request }) => ['css', 'js', 'png', 'jpg', 'jpeg', 'svg', 'gif'].some(ext => request.url.endsWith(`.${ext}`)),
   assetCache);
 
-registerRoute();
 
