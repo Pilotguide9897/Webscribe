@@ -1,16 +1,14 @@
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const WebpackPwaManifest = require("webpack-pwa-manifest");
 const path = require("path");
-const { InjectManifest } = require("workbox-webpack-plugin"); // Will generate the service worker for us.
-
-// TODO: Add and configure workbox plugins for a service worker and manifest file.
-
+const { InjectManifest } = require("workbox-webpack-plugin");
+//const { GenerateSW } = require("workbox-webpack-plugin");
 
 module.exports = () => {
   return {
     mode: "development",
     entry: {
-      main: "./src/js/index.js",
+      main: "./src/js/index.js", 
       install: "./src/js/install.js",
     },
     output: {
@@ -19,22 +17,22 @@ module.exports = () => {
     },
     plugins: [
       new WebpackPwaManifest({
-        name: "My Progressive Web App",
-        short_name: "MyPWA",
-        description: "My awesome Progressive Web App!",
+        name: "Just Another Code Editor",
+        short_name: "Webscribe",
+        description: "My first Progressive Web App!",
         background_color: "#ffffff",
-        crossorigin: "use-credentials",
+        crossorigin: null,
         icons: [
           {
-            src: path.resolve("src/assets/icon.png"),
+            src: path.resolve("src/images/logo.png"),
             sizes: [96, 128, 192, 256, 384, 512],
           },
           {
-            src: path.resolve("src/assets/large-icon.png"),
+            src: path.resolve("src/images/logo.png"),
             size: "1024x1024",
           },
           {
-            src: path.resolve("src/assets/maskable-icon.png"),
+            src: path.resolve("src/images/logo.png"),
             size: "1024x1024",
             purpose: "maskable",
           },
@@ -44,7 +42,10 @@ module.exports = () => {
         template: "./index.html",
         title: "Webpack Plugin",
       }),
-      new InjectManifest.GenerateSW(),
+      new InjectManifest({
+        swSrc: "./src-sw.js", 
+        swDest: "./dist/sw.js",
+      }),
     ],
     module: {
       rules: [
