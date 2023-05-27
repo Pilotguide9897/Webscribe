@@ -1,11 +1,8 @@
 import { Workbox } from 'workbox-window';
 import Editor from './editor';
+import './editor';
 import './database';
 import '../css/style.css';
-import './header';
-import './install';
-// import logo from './
-// Do I need to import my logo image?
 
 const main = document.querySelector('#main');
 main.innerHTML = '';
