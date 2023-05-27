@@ -1,7 +1,7 @@
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const WebpackPwaManifest = require("webpack-pwa-manifest");
 const path = require("path");
-const { InjectManifest } = require("workbox-webpack-plugin");
+const { InjectManifest } = require("workbox-webpack-plugin"); // Will generate the service worker for us.
 
 // TODO: Add and configure workbox plugins for a service worker and manifest file.
 
@@ -44,6 +44,7 @@ module.exports = () => {
         template: "./index.html",
         title: "Webpack Plugin",
       }),
+      new InjectManifest.GenerateSW(),
     ],
     module: {
       rules: [
