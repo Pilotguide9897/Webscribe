@@ -57,4 +57,3 @@ If you have any questions concerning this application, do not hesitate to reach 
 
 ## License
 This project is licensed under the ![MIT License](https://img.shields.io/badge/License-MIT-yellow.svg). See the [license](https://opensource.org/licenses/MIT) documentation for more information.
-
