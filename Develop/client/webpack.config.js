@@ -8,7 +8,7 @@ module.exports = () => {
   return {
     mode: "development",
     entry: {
-      main: "./src/js/index.js", 
+      main: "./src/js/index.js",
       install: "./src/js/install.js",
     },
     output: {
@@ -17,10 +17,11 @@ module.exports = () => {
     },
     plugins: [
       new WebpackPwaManifest({
-        name: "Just Another Code Editor",
+        name: "Just Another Text Editor",
         short_name: "Webscribe",
-        description: "My first Progressive Web App!",
-        background_color: "#ffffff",
+        description:
+          "My first Progressive Web App! It takes notes with JavaScript syntax highlighting!",
+        background_color: "#225ca3",
         crossorigin: null,
         icons: [
           {
@@ -43,7 +44,7 @@ module.exports = () => {
         title: "Webpack Plugin",
       }),
       new InjectManifest({
-        swSrc: "./src-sw.js", 
+        swSrc: "./src-sw.js",
         swDest: "./sw.js",
       }),
     ],
