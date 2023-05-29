@@ -33,29 +33,6 @@ export const putDb = async (content) => {
   }
 };
 
-// export const getDb = async () => {
-//   const jateDB = await openDB("jate", 1);
-//   const tx = jateDB.transaction("jate", "readonly");
-//   try {
-//     console.log("Get all the content from the db");
-//     const store = tx.objectStore("jate");
-//     const request = store.getAll();
-//     const result = await request;
-//     console.log("result.value", result);
-//     return result;
-//   } catch (error) {
-//     console.error("getDb not implemented", error);
-//   } finally {
-//     if (tx.done) {
-//       console.log("Transaction successfully completed");
-//     } else {
-//       console.error("Transaction aborted");
-//       tx.abort();
-//     }
-//   }
-// };
-
-// Returns the most recent entry or undefined if the database is empty
 export const getDb = async () => {
   const jateDB = await openDB("jate", 1);
   const tx = jateDB.transaction("jate", "readonly");
@@ -76,6 +53,5 @@ export const getDb = async () => {
     }
   }
 };
-
 
 initdb();

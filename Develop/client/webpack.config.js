@@ -19,7 +19,8 @@ module.exports = () => {
       new WebpackPwaManifest({
         name: "Just Another Text Editor",
         short_name: "Webscribe",
-        description: "My first Progressive Web App! It takes notes with JavaScript syntax highlighting!",
+        description:
+          "My first Progressive Web App! It takes notes with JavaScript syntax highlighting!",
         background_color: "#225ca3",
         crossorigin: null,
         icons: [
