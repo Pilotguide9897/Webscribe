@@ -14,10 +14,10 @@ A Javascript text editor progressive web application.
 - [License](#license)
 
 ## Screenshots 
-![In Browser]()
-![In App]()
-![Manifest]()
-![indexedDB]()
+
+![App Manifest](./Assets/AppManifest.png)
+![Service Worker](./Assets/ServiceWorker.png)
+![indexedDB](./Assets/IndexedDb.png)
 
 ## Description
 
@@ -27,7 +27,7 @@ WebScribe takes advantage of Webpack for bundling JavaScript files and generatin
 
 The goal of this application is to provide users a seamless interaction experience between the browser-based and installed states, renderring it a reliable tool for the creation and retrieval of code snippets and notes, whether users are online or offline.
 
-The application has been delpoyed via Heroku and can be visited [here]().
+The application has been delpoyed via Heroku and can be visited [here](https://salty-spire-15700.herokuapp.com/).
 
 ## Installation
 
