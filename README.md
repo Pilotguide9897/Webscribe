@@ -52,6 +52,9 @@ When users reopen the application, it retrieves their saved content from the Ind
 ## Contributing
 Users interested in contributing to this project may fork the GitHub repository, make their intended alterations, and submit these changes to the original repository as a pull request. Pull requests will be reviewed by the project author. If accepted, the changes will be merged and added to the project's main branch to create the new starting point for future development!
 
+## Plans for Future Development
+I have noticed a bug with the install button where it updates to say "installed" regardless of whether the user selects installed or not. I plan to fix this bug in the near future, however, since it does not severly affect the overall experience of using the app and because I do not want to accidentally insert additional errors into my code in advance of the submission of this challenge assignment on June 1, I will leave it be for now. I apologize for the inconvenience.
+
 ## Questions
 If you have any questions concerning this application, do not hesitate to reach me at jaredryan1997@hotmail.com. You may also view my GitHub profile at http://github.com/Pilotguide9897.
 
