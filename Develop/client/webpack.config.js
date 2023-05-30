@@ -23,6 +23,7 @@ module.exports = () => {
           "My first Progressive Web App! It takes notes with JavaScript syntax highlighting!",
         background_color: "#225ca3",
         crossorigin: null,
+        publicPath: "./",
         icons: [
           {
             src: path.resolve("src/images/logo.png"),
